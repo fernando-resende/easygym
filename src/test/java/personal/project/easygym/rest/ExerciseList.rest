@@ -1,0 +1,26 @@
+@baseUrl = http://localhost:8080/api/exercise-list
+
+GET {{baseUrl}}/list
+
+###
+
+POST {{baseUrl}}/save
+Content-Type: application/json
+
+{
+    "client": {
+        "id": 1,
+        "name": "Jhon Doe",
+        "cpf": "12345678900",
+        "birthdate": "2000-01-01"
+    },
+    "exercise": {
+        "id": 1,
+        "name": "Exercise 1",
+        "description": "For the chest"
+    },
+    "created": "2000-01-01",
+    "isValid": "true"
+}
+
+###

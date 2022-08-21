@@ -1,6 +1,7 @@
 package personal.project.easygym.model;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -31,5 +32,5 @@ public class Client {
     private LocalDate birthdate;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<ExerciseList> exercises;
+    private List<ExerciseList> exercises;
 }
