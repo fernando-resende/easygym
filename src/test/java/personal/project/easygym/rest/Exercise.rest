@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:8080/api/exercise
+
+GET {{baseUrl}}/list
+
+###
+
+POST {{baseUrl}}/save
+Content-Type: application/json
+
+{
+    "name": "Exercise 1",
+    "description": "For the chest"
+}
+
+###
+
+POST {{baseUrl}}/save
+Content-Type: application/json
+
+{
+    "name": "Exercise 2",
+    "description": "For the arms"
+}
+
+###
+
+POST {{baseUrl}}/save
+Content-Type: application/json
+
+{
+    "name": "Exercise 3",
+    "description": "For the legs"
+}
+
+###
+
+POST {{baseUrl}}/save
+Content-Type: application/json
+
+{
+    "name": "Exercise 4",
+    "description": "For the shouders"
+}
