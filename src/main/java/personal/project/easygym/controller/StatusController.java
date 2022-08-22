@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import personal.project.easygym.model.Address;
 import personal.project.easygym.model.Client;
 import personal.project.easygym.model.Exercise;
 import personal.project.easygym.model.ExerciseList;
@@ -37,15 +38,20 @@ public class StatusController {
     public ResponseEntity<String> populate(){
         Client client1 = new Client();
         Client client2 = new Client();
+        Address address = new Address();
 
         client1.setName("Jhon Doe");
         client1.setCpf("12345678900");
         client1.setBirthdate(LocalDate.parse("2000-01-01"));
+        address.setCep("35490000");
+        client1.setAddress(address);
         client1 = clientService.createOrUpdate(client1);
 
         client2.setName("Kirk Jhones");
         client2.setCpf("00987654321");
         client2.setBirthdate(LocalDate.parse("1970-06-06"));
+        address.setCep("36345000");
+        client2.setAddress(address);
         client2 = clientService.createOrUpdate(client2);
 
         Exercise ex1 = exerciseService.createOrUpdate(new Exercise(null, "Exercise 1", "description",null));
