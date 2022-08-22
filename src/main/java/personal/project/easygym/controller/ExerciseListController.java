@@ -3,16 +3,16 @@ package personal.project.easygym.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import personal.project.easygym.model.ExerciseList;
 import personal.project.easygym.service.ExerciseListService;
 
-@Controller
+@RestController
 @RequestMapping(path = "${api-prefix}/exercise-list")
 public class ExerciseListController {
 
