@@ -7,5 +7,5 @@ import personal.project.easygym.model.ExerciseList;
 
 @Repository
 public interface ExerciseListRepository extends JpaRepository<ExerciseList,Long>{
-    //Common methods, like findAll, is given by JpaRepository
+    //Common methods, like findAll, are given by JpaRepository
 }

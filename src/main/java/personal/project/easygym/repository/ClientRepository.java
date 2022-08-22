@@ -7,5 +7,5 @@ import personal.project.easygym.model.Client;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client,Long>{
-    //Common methods, like findAll, is given by JpaRepository
+    //Common methods, like findAll, are given by JpaRepository
 }

@@ -1,20 +1,26 @@
 package personal.project.easygym.model;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tbl_exercise")
 public class Exercise {
@@ -26,6 +32,8 @@ public class Exercise {
     
     private String description;
 
-    @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ExerciseList> exercises;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "exercises")
+    private List<ExerciseList> exercisesList = new ArrayList<ExerciseList>();
+
 }
